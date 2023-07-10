@@ -1,0 +1,13 @@
+import express from "express";
+import * as postController from "../controllers/postController";
+import verifyToken from "../middlewares/verifyToken";
+const router = express.Router();
+router.get("/all", postController.getPosts);
+router.get("/limit", postController.getPostsPaginate);
+router.get("/new-post", postController.getNewPosts);
+router.use(verifyToken);
+router.post("/create-new", postController.createNewPosts);
+router.get("/limit-manage", postController.getPostsPaginateManage);
+router.put("/update-post", postController.updatePost);
+router.delete("/delete-post", postController.deletePost);
+export default router;
