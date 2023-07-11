@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL, // cho phép url http có thể truy cập lấy data
+    origin: "*", // cho phép url http có thể truy cập lấy data
     methods: ["POST", "GET", "PUT", "DELETE"],
   })
 );
