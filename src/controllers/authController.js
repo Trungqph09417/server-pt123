@@ -29,7 +29,7 @@ export const login = async (req, res) => {
       });
     }
     const response = await authService.loginService(req.body);
-    console.log(response);
+
     return res.status(200).json(response);
   } catch (error) {
     return res.status(500).json({
